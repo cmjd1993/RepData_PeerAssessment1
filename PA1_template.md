@@ -55,7 +55,7 @@ str(data)
   
 ## What is mean total number of steps taken per day?  
 
-**For this part of the assignment, you can ignore the missing values in the dataset.**
+**For this part of the assignment, you can ignore the missing values in the dataset.**  
 The above is perceived as not removing the NAs but simply leaving them there and assuming that they are 0
 
 #### 1. Make a histogram of the total number of steps taken each day.  
@@ -113,6 +113,7 @@ Create a plot of the 5 minute interval and the average number of steps taken usi
 
 ```r
 plot(AverageDailyActivity$interval,AverageDailyActivity$steps, type="l", 
+     col = "blue",  
      xlab="Interval", ylab="Number of Steps",
      main="Average Number of Steps by Interval")
 ```
@@ -151,8 +152,12 @@ TotalNAs <- sum(is.na(data$steps))
 **Total NAs:** 2304
 
 #### 2. Devise a strategy for filling in all of the missing values in the dataset.  
+
+The simpliest strategy was the strategy advised in the asssignment, if there is an NA in the data, it should be replaced by the mean steps.  
+
 #### 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
-The simpliest strategy was the strategy advised in the asssignment, if there is an NA in the data that it is replaced by the average steps. 
+
+Using transform() to transform NAs to the mean steps.
 
 
 ```r
