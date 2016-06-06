@@ -128,6 +128,14 @@ Must ensure that interval is classed as a factor variable.
 ```r
 AverageDailyActivity$interval <- as.factor(AverageDailyActivity$interval)
 
+max(AverageDailyActivity$steps)
+```
+
+```
+## [1] 206.1698
+```
+
+```r
 AverageDailyActivity$interval[which.max(AverageDailyActivity$steps)]
 ```
 
@@ -136,6 +144,7 @@ AverageDailyActivity$interval[which.max(AverageDailyActivity$steps)]
 ## 288 Levels: 0 5 10 15 20 25 30 35 40 45 50 55 100 105 110 115 120 ... 2355
 ```
 
+The 5-minute interval with the maximum number of steps is interval 835 with 206.17 steps
 
 ## Imputing missing values
 
@@ -151,6 +160,7 @@ TotalNAs <- sum(is.na(data$steps))
 
 **Total NAs:** 2304
 
+
 #### 2. Devise a strategy for filling in all of the missing values in the dataset.  
 
 The simpliest strategy was the strategy advised in the asssignment, if there is an NA in the data, it should be replaced by the mean steps.  
@@ -158,6 +168,12 @@ The simpliest strategy was the strategy advised in the asssignment, if there is 
 #### 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
 Using transform() to transform NAs to the mean steps.
+=======
+#### 2. Devise a strategy for filling in all of the missing values in the dataset.   
+The simpliest strategy was the strategy advised in the asssignment, if there is an NA in the data, it should be replaced by the mean steps.   
+
+#### 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+
 
 
 ```r
