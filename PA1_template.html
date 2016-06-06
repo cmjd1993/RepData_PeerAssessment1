@@ -202,11 +202,18 @@ AverageDailyActivity$interval[which.max(AverageDailyActivity$steps)]</code></pre
 </div>
 <div id="devise-a-strategy-for-filling-in-all-of-the-missing-values-in-the-dataset." class="section level4">
 <h4>2. Devise a strategy for filling in all of the missing values in the dataset.</h4>
+<<<<<<< HEAD
 <p>The simpliest strategy was the strategy advised in the asssignment, if there is an NA in the data, it should be replaced by the mean steps.</p>
 </div>
 <div id="create-a-new-dataset-that-is-equal-to-the-original-dataset-but-with-the-missing-data-filled-in." class="section level4">
 <h4>3. Create a new dataset that is equal to the original dataset but with the missing data filled in.</h4>
 <p>Using transform() to transform NAs to the mean steps.</p>
+=======
+<p>The simpliest strategy was the strategy advised in the asssignment, if there is an NA in the data that it is replaced by the average steps.</p>
+</div>
+<div id="create-a-new-dataset-that-is-equal-to-the-original-dataset-but-with-the-missing-data-filled-in." class="section level4">
+<h4>3. Create a new dataset that is equal to the original dataset but with the missing data filled in.</h4>
+>>>>>>> 4a69afcd262f8984f089867f8c7df0ec35c6b632
 <pre class="r"><code>ImputeData &lt;- transform(data, steps = ifelse(is.na(data$steps), AverageDailyActivity$steps[match(data$interval, AverageDailyActivity$interval)], data$steps))</code></pre>
 </div>
 <div id="make-a-histogram-of-the-total-number-of-steps-taken-each-day.-1" class="section level4">
